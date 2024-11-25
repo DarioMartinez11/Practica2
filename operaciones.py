@@ -35,3 +35,10 @@ def dividir(a, b):
     if (a < 0) ^ (b < 0):  # XOR para verificar signos opuestos
         cociente = -cociente
     return cociente
+def factorial_iterativo(n): 
+    if not isinstance(n, int) or n < 0: 
+        raise ValueError("El número debe ser un entero no negativo.") 
+    resultado = 1 
+    for i in range(1, n + 1): 
+        resultado *= i 
+        return resultado
