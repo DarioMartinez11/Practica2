@@ -55,3 +55,11 @@ def factorial_iterativo(n):
         resultado *= i 
         return resultado
 >>>>>>> 38bd2abd22c686deb0cf8efa8c38511fe87c5058
+
+def fibonacci(n):
+    if not isinstance(n, int) or n < 0:
+        raise ValueError("El número debe ser un entero no negativo.")
+    a, b = 0, 1
+    for _ in range(n):
+        a, b = b, a + b
+    return a
