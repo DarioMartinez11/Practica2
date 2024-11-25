@@ -21,6 +21,7 @@ def multiplicar(a, b):
         return resultado
     else:
         raise ValueError("Ambos parámetros deben ser int o float.")
+<<<<<<< HEAD
 
 def factorial_recursivo(n):
     if not isinstance(n, int) or n < 0:
@@ -31,3 +32,26 @@ def factorial_recursivo(n):
 
 
 
+=======
+def dividir(a, b):
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        raise ValueError("Ambos parámetros deben ser int o float.")
+    if b == 0:
+        raise ZeroDivisionError("El divisor no puede ser cero.")
+    cociente = 0
+    acumulador = abs(a)
+    divisor = abs(b)
+    while acumulador >= divisor:
+        acumulador -= divisor
+        cociente += 1
+    if (a < 0) ^ (b < 0):  # XOR para verificar signos opuestos
+        cociente = -cociente
+    return cociente
+def factorial_iterativo(n): 
+    if not isinstance(n, int) or n < 0: 
+        raise ValueError("El número debe ser un entero no negativo.") 
+    resultado = 1 
+    for i in range(1, n + 1): 
+        resultado *= i 
+        return resultado
+>>>>>>> 38bd2abd22c686deb0cf8efa8c38511fe87c5058
