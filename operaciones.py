@@ -13,15 +13,21 @@ def restar(a, b):
 
 def multiplicar(a, b):
     if isinstance(a, (int, float)) and isinstance(b, (int, float)):
+        # Convertir b a entero
+        b = int(b)  # Esto redondeará b hacia el valor entero más cercano
+
         resultado = 0
-        for _ in range(abs(b)):
+        for _ in range(abs(b)):  # Ahora range acepta un valor entero
             resultado += abs(a)
+
         if (a < 0 and b > 0) or (a > 0 and b < 0):
             resultado = -resultado
+
         return resultado
     else:
         raise ValueError("Ambos parámetros deben ser int o float.")
-<<<<<<< HEAD
+
+
 
 def factorial_recursivo(n):
     if not isinstance(n, int) or n < 0:
@@ -30,9 +36,6 @@ def factorial_recursivo(n):
         return 1
     return n * factorial_recursivo(n - 1)
 
-
-
-=======
 def dividir(a, b):
     if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
         raise ValueError("Ambos parámetros deben ser int o float.")
@@ -47,14 +50,18 @@ def dividir(a, b):
     if (a < 0) ^ (b < 0):  # XOR para verificar signos opuestos
         cociente = -cociente
     return cociente
-def factorial_iterativo(n): 
-    if not isinstance(n, int) or n < 0: 
-        raise ValueError("El número debe ser un entero no negativo.") 
-    resultado = 1 
-    for i in range(1, n + 1): 
-        resultado *= i 
-        return resultado
->>>>>>> 38bd2abd22c686deb0cf8efa8c38511fe87c5058
+def factorial_iterativo(n):
+   
+    if not isinstance(n, int) or n < 0:
+        raise ValueError("El número debe ser un entero no negativo.")
+    
+    resultado = 1
+    for i in range(1, n + 1):  # Empieza en 1, y va hasta n (inclusive)
+        resultado *= i
+    
+    return resultado
+
+
 
 def fibonacci(n):
     if not isinstance(n, int) or n < 0:
