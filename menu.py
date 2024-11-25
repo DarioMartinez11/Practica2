@@ -1,3 +1,4 @@
+from operaciones import sumar, restar, multiplicar, dividir
 
 def mostrar_menu():
     print("1- Sumar")
@@ -17,8 +18,13 @@ def mostrar_menu():
         a, b = map(float, input("Introduce dos números separados por espacio: ").split())
         print("Resultado:", multiplicar(a, b))
     elif opcion == "4":
-        a, b = map(float, input("Introduce dos números separados por espacio: ").split())
-        print("Resultado:", dividir(a, b))
+        try:
+            a, b = map(float, input("Introduce dos números separados por espacio: ").split())
+            print("Resultado:", dividir(a, b))
+        except ZeroDivisionError:
+            print("Error: No se puede dividir entre 0.")
+        except ValueError as e:
+            print("Error:", e)
     elif opcion == "5":
         print("Saliendo del programa...")
     else:
