@@ -1,5 +1,7 @@
+
 # menu.py
 from operaciones import sumar, restar, multiplicar, dividir, factorial_iterativo, factorial_recursivo, fibonacci
+
 
 def mostrar_menu():
     while True:
@@ -12,6 +14,7 @@ def mostrar_menu():
         print("6- Calcular el factorial de un número (iterativo)")
         print("7- Calcular el factorial de un número (recursivo)")
         print("8- Calcular el Fibonacci de un número")
+
 
         opcion = input("Selecciona una opción: ")
 
